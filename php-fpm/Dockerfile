@@ -16,6 +16,12 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     install-php-extensions gd xdebug bcmath bz2 calendar exif gettext shmop redis sockets yaml xsl xmlrpc
 
+
+RUN echo "xdebug.force_error_reporting=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.client_host=192.168.221.1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.start_with_request=true" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     && docker-php-ext-install -j$(nproc) pgsql iconv xml soap opcache pdo pdo_pgsql
