@@ -6,6 +6,7 @@ RUN apt -yqq update
 RUN apt -yqq install libxml2-dev
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install xml
+RUN docker-php-ext-install intl
 
 RUN apt-get update && apt-get install -y wget git unzip vim libssl-dev openssl libpng-dev libgd-dev libpq-dev cron curl 
 
