@@ -1,12 +1,10 @@
-# Symfony | Docker Compose enviroment
+# Symfony | docker-compose repository
 
+## About
 
-### About
+System development environment for Symfony projects.
 
-
-
-### Control
-
+## Commands list
 ```
 ./bin/composer.bash - is alias for Composer inside php-fpm container
 
@@ -21,12 +19,21 @@
 ./bin/stop.bash - aliass for docker-compose down
 
 ```
-### Services
+## Services
 
-#### NGINX
+**Web url**
+storebot.local/
 
-Locatation: http://storebot.local/
-
-#### Adminer
+**Adminer**
 
 Location: http://storebot.local:8080/
+
+## Credentials 
+
+**Postgres**
+
+``
+POSTGRES_DB: 'slaveapp_db'
+POSTGRES_USER: 'slave_user'
+POSTGRES_PASSWORD: '124fFv2GddQds'
+``
