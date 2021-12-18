@@ -8,7 +8,7 @@ RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install xml
 RUN docker-php-ext-install intl
 
-RUN apt-get update && apt-get install -y wget git unzip vim libssl-dev openssl libpng-dev libgd-dev libpq-dev cron curl 
+RUN apt-get update && apt-get install -y wget git unzip vim libssl-dev openssl libpng-dev libgd-dev libpq-dev cron curl tesseract-ocr
 
 RUN pecl install xdebug-3.0.1 \
     && docker-php-ext-enable xdebug
